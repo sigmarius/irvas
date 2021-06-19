@@ -6,6 +6,9 @@ const browsersync = require("browser-sync");
 
 const dist = "./dist/";
 
+const ghPages = require('gh-pages');
+const path = require('path');
+
 gulp.task("copy-html", () => {
     return gulp.src("./src/index.html")
                 .pipe(gulp.dest(dist))
@@ -93,3 +96,8 @@ gulp.task("build-prod-js", () => {
 });
 
 gulp.task("default", gulp.parallel("watch", "build"));
+
+function deploy(cb) {
+  ghPages.publish(path.join(process.cwd(), './dist'), cb);
+}
+exports.deploy = deploy;
