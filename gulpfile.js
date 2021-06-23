@@ -4,7 +4,8 @@ const gulp = require("gulp");
 const webpack = require("webpack-stream");
 const browsersync = require("browser-sync");
 
-const dist = "./dist/";
+// const dist = "./dist/";
+const dist  = "C:/MAMP/htdocs/test";
 
 const ghPages = require('gh-pages');
 const path = require('path');
